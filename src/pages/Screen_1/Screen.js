@@ -1,29 +1,29 @@
 import React from "react";
-import "../../elements/images/bikeweather_logo.png"
-import {Location, TypeOfBike, Skills, LetStart} from 'src/elements/buttons';
-// import {TypeOfBike} from "../../elements/button/TypeOfBike";
-// import {Skills} from "../../elements/button/Skills";
-// import {LetStart} from "../../elements/button/LetStart";
+import {BikeWeatherLogo} from "../../elements/images/BikeWeatherLogo"
+// import {Location, TypeOfBike, Skills, LetStart} from '@/buttons';
+import {TypeOfBike} from "../../elements/buttons/TypeOfBike";
+import {Skills} from "../../elements/buttons/Skills";
+import {LetStart} from "../../elements/buttons/LetStart";
+import {Location} from "../../elements/buttons/Location"
 import styles from "./Screen.module.css"
 // import style from "../../App.css"
 
+
 export const Screen = () => {
     return (
-    return (
-        <div className={styles.screen}>
-            <div className={styles.div2}>
-                <div className={styles.bikeWeatherLogoWrapper}>
-                    <img src={bikeweatherLogo} alt="Bike Weather Logo" />
+        <div className="screen">
+            <div className="div-2">
+                <div className="bike-weather-logo-wrapper">
+                    <BikeWeatherLogo className="bike-weather-logo" />
                 </div>
-                <LetStart className={styles.letStartInstance} />
-                <div className={styles.locationWrapper}>
-                    <Location className={styles.locationInstance} />
+                <LetStart className="let-sstart-instance" />
+                <div className="location-wrapper">
+                    <Location className="location-instance" />
                 </div>
-                <div className={styles.homeButton} />
-                <TypeOfBike className={styles.typeOfBikeInstance} />
-                <Skills className={styles.skillsInstance} />
+                <div className="home-button" />
+                <TypeOfBike className="type-of-bike-instance" />
+                <Skills className="skills-instance" />
             </div>
         </div>
     );
 };
-

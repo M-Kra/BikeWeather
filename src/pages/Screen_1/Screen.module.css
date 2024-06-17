@@ -36,16 +36,16 @@ LOCATION / TYPE OF BIKE / SKILLS
 LETS'S START
 */
 
-.let-sstart {
+.let-start {
     height: 100px;
     width: 335px;
 }
 
-.let-sstart .element-wrapper {
+.let-start .element-wrapper {
     height: 100px;
 }
 
-.let-sstart .element {
+.let-start .element {
     align-items: flex-start;
     background-color: #1b1b1b;
     border-radius: 24px;
@@ -54,15 +54,15 @@ LETS'S START
     gap: 4px;
     height: 100px;
     overflow: hidden;
-    padding: 24px 0px 24px 24px;
+    padding: 24px 0 24px 24px;
     position: relative;
     width: 335px;
 }
 
-.let-sstart .text-wrapper {
+.let-start .text-wrapper {
     -webkit-text-stroke: 1px #353535b2;
     color: #67bf00;
-    font-family: "Bayon-Regular", Helvetica;
+    font-family: "Bayon-Regular", Helvetica, serif;
     font-size: 32px;
     font-weight: 400;
     letter-spacing: -0.41px;
@@ -75,4 +75,12 @@ LETS'S START
     text-align: center;
     text-shadow: 2px 2px 4px #00000040;
     width: 289px;
+}
+
+.bike-weather-logo {
+    height: 108px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 252px;
 }
