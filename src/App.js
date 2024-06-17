@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import style from '../src/pages/Screen_1/Screen.module.css';
+import { createRoot } from "react-dom/client";
+import {HashRouter, Route, Routes, Link, NavLink, Outlet} from 'react-router-dom';
+import {Screen} from './pages/Screen_1'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+    <>
+        <HashRouter>
+            <Routes>
+                <Route path='/' element={<Screen />} />
+            </Routes>
+        </HashRouter>
+    </>
+    )
 }
 
+const container = document.getElementById("app");
+const root = createRoot(container);
+root.render(<App/>);
 export default App;
