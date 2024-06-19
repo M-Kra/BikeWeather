@@ -10,8 +10,8 @@ export const ScreenTwo = () => {
 
     return (
         <div className={styles.containerTwo}>
-            <h1>LOCATION {buttonID}</h1>
-            <p>Choose location {option}</p>
+            <h1>LOCATION </h1>
+            <p>Choose location </p>
             {}
         </div>
     );
