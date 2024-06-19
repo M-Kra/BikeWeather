@@ -3,7 +3,7 @@ import styles from '../Screen_2/ScreenTwo.modules.css'
 import {Rotues, Route, useParams} from 'react-router-dom';
 
 export const ScreenTwo = () => {
-    const {buttonID, option} = useParams();
+    // const {buttonID, option} = useParams();
 //     const buttonsDataTwo =[
 //         {id: 1, label: 'TRIAL_NAME', options: [ 'distance', 'chance of mud']}
 //     ];
