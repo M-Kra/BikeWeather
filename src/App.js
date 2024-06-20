@@ -12,22 +12,15 @@ import {
 import {Screen} from './pages/Screen_1/Screen'
 import {ScreenTwo} from './pages/Screen_2/ScreenTwo'
 
-function App () {
-    //routing//
+const App = () => {
     return (
         <HashRouter>
             <Routes>
-                <Route path='/' element = {<Screen/>}/>
-                <Route path='/ScreenTwo/:buttonID/:options' element ={<ScreenTwo/>}/>
+                <Route path='/' element = {<Screen />} />
+                <Route path='../Screen_2/ScreenTwo.js' element = {<ScreenTwo />} />
             </Routes>
         </HashRouter>
-    // <div className={"App"}>
-    //     <Screen/>
-    // </div>
     );
-}
+};
 
-// const container = document.getElementById("app");
-// const root = createRoot(container);
-// root.render(<App/>);
 export default App;

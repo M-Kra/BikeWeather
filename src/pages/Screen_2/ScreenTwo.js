@@ -1,6 +1,7 @@
 import React from "react";
 import styles from '../Screen_2/ScreenTwo.modules.css'
-import {Rotues, Route, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
+
 
 export const ScreenTwo = () => {
     // const {buttonID, option} = useParams();
@@ -9,9 +10,9 @@ export const ScreenTwo = () => {
 //     ];
 
     return (
-        <div className={styles.containerTwo}>
+        <div>
             <h1>LOCATION </h1>
-            <p>Choose location </p>
+            <p>Choose location</p>
             {}
         </div>
     );

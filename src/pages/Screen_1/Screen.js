@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import styles from './Screen.module.css';
 import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
 
@@ -8,6 +8,7 @@ const buttonsData = [
     {id: 2, label: 'TYPE OF BIKE', options: ['gravel', 'trail', 'enduro']},
     {id: 3, label: 'SKILLS', options: ['begginer', 'intermediate', 'advanced']},
 ];
+
 
 export const Screen = () => {
     const [selectedButtons, setSelectedButtons] = useState ({}); //stan początkowy przycisku//
@@ -27,6 +28,10 @@ export const Screen = () => {
         setExpandedButton (expandedButton === buttonId ? null : buttonId ); //rozwnięty null, otwarty buttonId - otwiera
         // i zamyka listy menu rozwijanego. Otwiera na buttonId, a zamyka na null//
     };
+    const goToScreenTwo = () => {
+        navigate ('../Screen_2/ScreenTwo.js');
+    };
+
     return (
         <div className={styles.container}>
             <img src={bikeWeatherLogo} alt="Bike Weather Logo" className={styles.logo}/>
@@ -50,9 +55,10 @@ export const Screen = () => {
                     )}
                 </div>
             ))}
-            <div className={styles.button} onClick={() => window.location.href = '../Screen_Two.jsx'}>
+            <div className={styles.button} onClick={goToScreenTwo} >
                 LET'S START!
             </div>
         </div>
-    )
+    );
+
 };
