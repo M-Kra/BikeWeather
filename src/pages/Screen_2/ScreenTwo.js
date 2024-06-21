@@ -1,19 +1,23 @@
-import React from "react";
-import styles from '../Screen_2/ScreenTwo.modules.css'
-import {useParams} from 'react-router-dom';
+import React, {useState, useEffect} from "react";
 
+import styles from './ScreenTwo.module.css'
+import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
 
-export const ScreenTwo = () => {
-    // const {buttonID, option} = useParams();
-//     const buttonsDataTwo =[
-//         {id: 1, label: 'TRIAL_NAME', options: [ 'distance', 'chance of mud']}
-//     ];
-
+const ScreenTwo = () => {
     return (
-        <div>
-            <h1>LOCATION </h1>
-            <p>Choose location</p>
-            {}
+        <div className={}>
+
         </div>
-    );
-};
+    )
+}
+// const location = useLocation();
+// const { selectedButtons } = location.state || {};
+    // const [buttons, setButtons] = useState([]);
+
+        // <div className={styles.container2}>
+        //     <img src={bikeWeatherLogo} alt="Bike Weather Logo" className={styles.logo2}/>
+
+
+
+
+export {ScreenTwo};
