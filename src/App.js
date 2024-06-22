@@ -8,7 +8,8 @@ import {
     // Outlet
 } from 'react-router-dom';
 import {Screen} from '../src/pages/Screen_1/Screen';
-import {ScreenTwo} from '../src/pages/Screen_2/ScreenTwo';
+import ScreenTwo from '../src/pages/Screen_2/ScreenTwo';
+import ScreenThree from '../src/pages/Screen_3/ScreenThree';
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element = {<Screen />} />
                 <Route path='/screen-two' element = {<ScreenTwo />} />
+                <Route path='/screen-three' element = {<ScreenThree />} />
             </Routes>
         </HashRouter>
     );
