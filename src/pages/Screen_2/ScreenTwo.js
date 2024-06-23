@@ -1,23 +1,47 @@
 import React, {useState, useEffect} from "react";
 import styles from './ScreenTwo.module.css'
-import {useNavigate } from 'react-router-dom'
+import {useNavigate, useLocation} from 'react-router-dom'
+import TrialSelector from '../../components/TrialSelector'
 import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
 
 const ScreenTwo = () => {
     const [buttons, setButtons] = useState ([]);
-    const navigate = useNavigate();
+    const navigate = useNavigate ();
+    const location = useLocation ();
+    const {selectedButtons} = location.state;
 
     useEffect (() => {
-        const buttonsData = [
-            {id: 1, trailName: 'Zajecznik', distance: 25.8, chanceOfMud:'possible'},
+        const getSelectedTrial = (selections) => {
+            const {1: loc, 2: bike, 3: skills} = selections;
+            const trail = TrialSelector[ loc ]?.[ bike ]?.[ skills ];
+            if (trail) {
+                return {
+                    id: 1,
+                    trailName: trail.trailName,
+                    distance: trail.distance,
+                    chanceOfMud: 'N/A',
+                    gpxFile: trail.path,
+                };
+            } else {
+                return {
+                    id: 1,
+                    trailName: "No trail found",
+                    distance: 0,
+                    chanceOfMud: "Unknown"
+                }
+            }
+        }
 
-        ];
-
+        const buttonsData = [getSelectedTrial (selectedButtons)];
         setButtons (buttonsData);
-    }, [<label for="123"></label>]);
+    }, [selectedButtons]);
+
 
     const goToScreenThree = () => {
-        navigate('/screen-three');
+        if (buttons.length > 0) {
+            const {gpxFile, trailName} = buttons[ 0 ];
+            navigate ('/screen-three', {state: {gpxFile, trailName}});
+        }
     }
 
     return (

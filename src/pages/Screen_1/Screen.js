@@ -6,7 +6,7 @@ import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
 const buttonsData = [
     {id: 1, label: 'LOCATION', options: ['swieradow', 'michalowice', 'szklarska poreba']},
     {id: 2, label: 'TYPE OF BIKE', options: ['gravel', 'trail', 'enduro']},
-    {id: 3, label: 'SKILLS', options: ['begginer', 'intermediate', 'advanced']},
+    {id: 3, label: 'SKILLS', options: ['beginner', 'intermediate', 'advanced']},
 ];
 
 
@@ -30,7 +30,7 @@ export const Screen = () => {
     };
     
     const goToScreenTwo = () => {
-        navigate('/screen-two');
+        navigate('/screen-two', {state: {selectedButtons}});
     }
     
     return (
