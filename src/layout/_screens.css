@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    width: 480px;
+}
+.logo-bike-weather {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    scale: 40%;
+}
+
+.main-logo-1-1 {
+    margin-top: -70px;
+}
+
+.main-logo-1-2 {
+margin-top: -40px}

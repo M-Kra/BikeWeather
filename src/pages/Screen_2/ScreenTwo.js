@@ -14,8 +14,7 @@ const ScreenTwo = () => {
         const getSelectedTrial = (selections) => {
             const {1: loc, 2: bike, 3: skills} = selections;
             const trail = TrialSelector[ loc ]?.[ bike ]?.[ skills ];
-            if (trail) {
-                return {
+            if (trail) {                return {
                     id: 1,
                     trailName: trail.trailName,
                     distance: trail.distance,
