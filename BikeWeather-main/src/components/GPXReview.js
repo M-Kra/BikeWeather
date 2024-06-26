@@ -14,7 +14,13 @@ const GPXReview = ({gpxFile}) => {
                     startIconUrl: null,
                     endIconUrl: null,
                     shadowUrl: null,
-                }
+                },
+                polyline_options: {
+                    color: 'red',
+                    weight: 2,
+                    opacity: 0.7,
+                    lineCap: 'round',
+                },
             });
             gpx.on ("loaded", (e) => {
                 map.fitBounds (e.target.getBounds ());

@@ -1,15 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from './ScreenTwo.module.css'
 import {useNavigate} from 'react-router-dom'
 import {getSelectedTrial} from "../../components/TrialSelector";
+import NavigationButtons from "../../components/NavigationButtons";
 import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
+import {TrailContext} from "../../components/TrailContext";
 
 const ScreenTwo = ({location, bike, skills}) => {
     const navigate = useNavigate ();
+    const {setTrail} = useContext(TrailContext);
     const trail = getSelectedTrial(location, bike, skills);
 
     const goToScreenThree = () => {
-            navigate ('/screen-three', {state: {gpxFile: trail.file, trailName: trail.trailName}});
+        setTrail ({gpxFile: trail.file, trailName: trail.trailName});
+        navigate('/screen-three')
         };
 
     if (!trail) {
@@ -31,7 +35,12 @@ const ScreenTwo = ({location, bike, skills}) => {
                         <p>N/A</p>
                     </div>
             </div>
+
+        <div className={styles.hiddenContainer}>
+            <NavigationButtons backPath='/'/>
         </div>
+        </div>
+
     );
 }
 

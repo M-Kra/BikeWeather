@@ -1,3 +1,9 @@
+.logo {
+    width: 250px;
+    height: 110px;
+    margin-bottom: 55px;
+}
+
 .container2 {
     display: flex;
     flex-direction: column;
@@ -9,12 +15,6 @@
     background-color: black;
     border-radius: 20px;
     font-family: "Bayon", sans-serif;
-}
-
-.logo {
-    width: 250px;
-    height: 110px;
-    margin-bottom: 55px;
 }
 
 .buttonContainer {
@@ -34,18 +34,22 @@
     white-space: nowrap;
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-
-
 }
 
 .buttonItem span {
     font-size: 20px;
     margin-bottom: -20px;
     margin-top: -5px;
-
 }
 
 .buttonItem p {
     font-size: 20px;
     margin-bottom: -10px;
+}
+
+.hiddenContainer {
+    display: flex;
+    width: 95%;
+    height: 481px;
+    align-items: flex-end;
 }
