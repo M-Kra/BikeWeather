@@ -1,0 +1,71 @@
+/*SCREEN 1*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 375px;
+    height: 800px;
+    padding-top: 55px;
+    box-sizing: border-box;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.logo {
+    width: 250px;
+    height: 110px;
+    margin-bottom: 55px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 335px;
+    height: 90px;
+    margin-bottom: 55px;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    border-radius: 24px;
+    border: none;
+    font-size: 24px;
+    font-family: "Bayon", sans-serif;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1B1B1B;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #468000;
+    border-radius: 8px;
+    z-index: 1;
+
+}
+
+.button:hover .dropdown {
+    display: block;
+}
+
+.dropdownItem {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: #f0f0f0;
+}
+
+.selected {
+    background-color: #468000;
+    color: black; font-family: Bayon, sans-serif;
+}

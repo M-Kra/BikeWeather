@@ -1,0 +1,17 @@
+:root {
+    --dark-gray: rgba(35, 35, 35, 1);
+}
+
+.button-effects {
+    height: 100px;
+    width: 335px;
+}
+
+.button-effects .frame-823424764 {
+    width: unset !important;
+}
+
+.button-effects .frame-instance {
+    width: 139.61px !important;
+}
+
