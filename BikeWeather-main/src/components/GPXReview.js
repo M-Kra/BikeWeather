@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import {useMap} from 'react-leaflet'
 import L from "leaflet";
 import 'leaflet-gpx';
 
-const GPXReview = ({gpxFile}) => {
+const GPXReview = ({gpxFile, setElevation}) => {
     const map = useMap();
 
     useEffect (() => {
@@ -23,12 +23,17 @@ const GPXReview = ({gpxFile}) => {
                 },
             });
             gpx.on ("loaded", (e) => {
-                map.fitBounds (e.target.getBounds ());
+                map.fitBounds(e.target.getBounds ());
+                const totalElevation = e.target.get_elevation_gain();
+                if (typeof setElevation === 'function') {
+                    setElevation(totalElevation);
+
+                }
             });
 
             gpx.addTo (map);
         }
-    }, [gpxFile, map]);
+    }, [gpxFile, map, setElevation]);
 
     return null;
 
