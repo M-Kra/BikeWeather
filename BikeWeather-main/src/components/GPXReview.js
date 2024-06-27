@@ -3,12 +3,13 @@ import {useMap} from 'react-leaflet'
 import L from "leaflet";
 import 'leaflet-gpx';
 
-const GPXReview = ({gpxFile, setElevation}) => {
+const GPXReview = ({gpxFile, setElevationData, setCoordinates}) => {
     const map = useMap();
 
     useEffect (() => {
         if (gpxFile) {
-            const gpx = new L.GPX (gpxFile, {
+            console.log('loading gpx', gpxFile);
+            const gpx = new L.GPX(gpxFile, {
                 async: true,
                 marker_options: {
                     startIconUrl: null,
@@ -24,16 +25,25 @@ const GPXReview = ({gpxFile, setElevation}) => {
             });
             gpx.on ("loaded", (e) => {
                 map.fitBounds(e.target.getBounds ());
-                const totalElevation = e.target.get_elevation_gain();
-                if (typeof setElevation === 'function') {
-                    setElevation(totalElevation);
-
+                const elevationGain =e.target.get_elevation_gain()
+                if (typeof setElevationData === 'function') {
+                    setElevationData({elevationGain});
+                } else {
+                    console.error('setElevationData is not a function? undefined?', setElevationData)
+                }
+                const center = e.target.getBounds().getCenter();
+                if (typeof setCoordinates === 'function') {
+                    setCoordinates({lat:center.lat, lng: center.lng});
                 }
             });
 
+            gpx.on('error', (error) =>{
+                console.error("gpx loading failed", error)
+            })
+
             gpx.addTo (map);
         }
-    }, [gpxFile, map, setElevation]);
+    }, [gpxFile, map, setElevationData, setCoordinates]);
 
     return null;
 

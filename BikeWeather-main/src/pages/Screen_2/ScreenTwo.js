@@ -12,7 +12,7 @@ const ScreenTwo = ({location, bike, skills}) => {
     const trail = getSelectedTrial(location, bike, skills);
 
     const goToScreenThree = () => {
-        setTrail ({gpxFile: trail.file, trailName: trail.trailName});
+        setTrail ({gpxFile: trail.file, trailName: trail.trailName, distance: trail.distance});
         navigate('/screen-three')
         };
 

@@ -33,6 +33,8 @@ const NavigationButtons = ({backPath, nextPath}) => {
                     <img src={nextIcon} alt="Next" className={styles.icon}/>
                 </button>
             )}
+
+            {}
         </div>
     );
 };

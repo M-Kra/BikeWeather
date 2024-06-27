@@ -28,7 +28,6 @@
 .mapContainer{
     width: 95%;
     height: 300px;
-    margin-top: 5px;
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
@@ -36,10 +35,66 @@
 }
 
 .infoContainer {
+    font-family: "Bayon", sans-serif;
+    font-size: 22px;
+    margin-top: 20px;
+    display: grid;
+    grid: 40px /auto;
+    margin-left: 50px;
+    width: 90%;
+    color: rgba(255, 255, 255, 0.7);
+}
 
+.infoItem  {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-right: 50px;
+
+}
+.infoItem2  {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
 
 }
 
-.infoItem.infoItem2.infoItem3.infoItem4 {
 
-}
+
+
+/*.buttonContainer {*/
+/*    width: 90%;*/
+/*    padding: 10px;*/
+/*    overflow-y: auto;*/
+/*    border-radius: 30px;*/
+/*    background-color: #1b1b1b;*/
+/*    font-family: Bayon, sans-serif;*/
+/*}*/
+
+/*.buttonItem {*/
+/*    display: grid;*/
+/*    position: relative;*/
+/*    justify-content: space-evenly;*/
+/*    grid-template-columns: repeat(3, 110px);*/
+/*    white-space: nowrap;*/
+/*    color: rgba(255, 255, 255, 0.7);*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.buttonItem span {*/
+/*    font-size: 20px;*/
+/*    margin-bottom: -20px;*/
+/*    margin-top: -5px;*/
+/*}*/
+
+/*.buttonItem p {*/
+/*    font-size: 20px;*/
+/*    margin-bottom: -10px;*/
+/*}*/
+
+/*.hiddenContainer {*/
+/*    display: flex;*/
+/*    width: 95%;*/
+/*    height: 481px;*/
+/*    align-items: flex-end;*/
+/*}*/

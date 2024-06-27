@@ -7,7 +7,8 @@ import "leaflet/dist/leaflet.css";
 
 
 
-const MapComponent = ({zoom, center, gpxFile, setElevation}) => {
+const MapComponent = ({zoom, center, gpxFile, setElevationData, setCoordinates}) => {
+    console.log('MapComponent props:', {zoom, center, gpxFile, setElevationData});
 
     return (
         <MapContainer center={center} zoom={zoom} style={{ height: '100%', width: '100%' }}>
@@ -15,7 +16,7 @@ const MapComponent = ({zoom, center, gpxFile, setElevation}) => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            {gpxFile && <GPXReview gpxFile={gpxFile} setElevation={setElevation}/> }
+            {gpxFile && <GPXReview gpxFile={gpxFile} setElevationData={setElevationData} setCoordinates={setCoordinates}/> }
             <UserLocationPosition />
 
         </MapContainer>

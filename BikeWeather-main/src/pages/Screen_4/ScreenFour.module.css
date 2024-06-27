@@ -35,3 +35,25 @@
     background-color: white;
     position: relative;
 }
+ /*button close*/
+
+
+.button {
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    margin-left: 200px;
+    margin-top: 32px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+}

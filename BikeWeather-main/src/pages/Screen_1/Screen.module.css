@@ -9,6 +9,7 @@
     box-sizing: border-box;
     background-color: black;
     border-radius: 20px;
+    font-family: "Bayon", sans-serif;
 }
 
 .logo {
@@ -59,13 +60,15 @@
     padding: 10px;
     text-align: center;
     cursor: pointer;
+    z-index: 1;
 }
 
 .dropdownItem:hover {
-    background-color: #f0f0f0;
+    background-color: white;
 }
 
 .selected {
     background-color: #468000;
-    color: black; font-family: Bayon, sans-serif;
+    color: black;
+    font-family: Bayon, sans-serif;
 }

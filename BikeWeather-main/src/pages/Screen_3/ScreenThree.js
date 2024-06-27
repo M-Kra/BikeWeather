@@ -5,24 +5,22 @@ import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
 import MapComponent from '../../components/MapComponent'
 import NavigationButtons from "../../components/NavigationButtons";
 import {TrailContext} from "../../components/TrailContext";
-
+import MudChance from "../../components/MudChance";
 
 const ScreenThree = () => {
     const navigate = useNavigate();
     const {trail} = useContext(TrailContext);
-    const [elevation, setElevation] = useState(null);
+    const [elevationData, setElevationData] = useState({elevationGain: null});
+    const [temperature, setTemperature] = useState(null);
+    const [coordinates, setCoordinates] = useState({lat: null, lng: null});
+    const [mudChance, setMudChance] = useState (null);
 
-    useEffect (() => {
-        if (elevation!== null) {
 
-        }
-    }, [elevation]);
-
-        if (!trail.gpxFile) {
+    if (!trail.gpxFile) {
         return <div className={styles.container3}>No data 3</div>
     }
 
-    const {gpxFile, trailName} = trail;
+    const {gpxFile, trailName, distance} = trail;
 
     const goToScreenFour = () => {
         navigate('/screen-four');
@@ -36,25 +34,27 @@ const ScreenThree = () => {
                     <h1>{trailName}</h1>
                 </div>
                 <div className={styles.mapContainer}>
-                    <MapComponent center={[50.910827, 15.349617]} zoom={10} gpxFile={gpxFile}/>
+                    <MapComponent center={[50.910827, 15.349617]} zoom={10} gpxFile={gpxFile} setElevationData={setElevationData} setCoordinates={setCoordinates}/>
                 </div>
                 <div className={styles.infoContainer}>
                     <div className={styles.infoItem}>
-                        <span>Distance</span>
-                        <span>{trail.distance}</span>
+                        <span>Distance </span>
+                        <span>Elevation Gain </span>
+                    </div>
+                    <div className={styles.infoItem}>
+                        <span>{distance}km</span>
+                        <span>{elevationData.elevationGain !== null ? `${elevationData.elevationGain.toFixed(2)} m` : '-'}</span>
+
                     </div>
                     <div className={styles.infoItem2}>
-                        <span>Elevation gain</span>
-                        <span>{elevation !==null ? `${elevation} m` : '-'}</span>
-                    </div>
-                    <div className={styles.infoItem3}>
                         <span>Temperature</span>
-                        <span> - </span>
-                    </div>
-                    <div className={styles.infoItem4}>
                         <span>Chance of mud</span>
-                        <span> - </span>
                     </div>
+                    <div className={styles.infoItem2}>
+                        <span>{temperature !==null ? `${temperature}°C` : "-"}</span>
+                        <span>{mudChance !==null ? `${mudChance}%`: "-"} </span>
+                    </div>
+                    <MudChance coordinates={coordinates} elevationGain={elevationData.elevationGain} setTemperature={setTemperature} setMudChance={setMudChance} />
                 </div>
             </div>
             <NavigationButtons backPath='/screen-two' nextPath={goToScreenFour}/>
