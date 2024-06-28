@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import { useNavigate} from 'react-router-dom';
 import styles from "../Screen_3/ScreenThree.module.css";
 import bikeWeatherLogo from '../../elements/images/bike-weather-logo.png';
@@ -42,7 +42,7 @@ const ScreenThree = () => {
                         <span>Elevation Gain </span>
                     </div>
                     <div className={styles.infoItem}>
-                        <span>{distance}km</span>
+                        <span>{distance} km</span>
                         <span>{elevationData.elevationGain !== null ? `${elevationData.elevationGain.toFixed(2)} m` : '-'}</span>
 
                     </div>
@@ -51,8 +51,8 @@ const ScreenThree = () => {
                         <span>Chance of mud</span>
                     </div>
                     <div className={styles.infoItem2}>
-                        <span>{temperature !==null ? `${temperature}°C` : "-"}</span>
-                        <span>{mudChance !==null ? `${mudChance}%`: "-"} </span>
+                        <span>{temperature !==null ? `${temperature} °C` : "-"}</span>
+                        <span>{mudChance !==null ? `${mudChance} %`: "-"} </span>
                     </div>
                     <MudChance coordinates={coordinates} elevationGain={elevationData.elevationGain} setTemperature={setTemperature} setMudChance={setMudChance} />
                 </div>

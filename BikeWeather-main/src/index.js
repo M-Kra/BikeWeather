@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './pages/Screen_1/Screen.module.css'
-import './pages/Screen_2/ScreenTwo.module.css'
 import App from './App';
 import './styles/leaflet.css'
 

@@ -27,12 +27,12 @@ const ScreenTwo = ({location, bike, skills}) => {
                 <div className={styles.buttonItem}>
                     <span>Trial Name:</span>
                     <span>Distance:</span>
-                    <span>Chance of Mud:</span>
+                    <span></span>
                 </div>
                     <div className={styles.buttonItem}>
                         <p>{trail.trailName}</p>
-                        <p>{trail.distance}km</p>
-                        <p>N/A</p>
+                        <p>{trail.distance} km</p>
+                        <p></p>
                     </div>
             </div>
 

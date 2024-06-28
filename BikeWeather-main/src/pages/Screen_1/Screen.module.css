@@ -60,11 +60,14 @@
     padding: 10px;
     text-align: center;
     cursor: pointer;
+    background-color: #1B1B1B;
     z-index: 1;
 }
 
 .dropdownItem:hover {
     background-color: white;
+    border: 1px solid #468000;
+
 }
 
 .selected {

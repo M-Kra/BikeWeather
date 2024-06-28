@@ -16,7 +16,7 @@ const calculateMudChance = (weatherData,elevationData ) => {
     }
 
     if (elevationData) {
-        mudChance += elevationData * 0.05;
+        mudChance += elevationData * 0.03;
     }
 
     if (mudChance > 100) mudChance = 100;
