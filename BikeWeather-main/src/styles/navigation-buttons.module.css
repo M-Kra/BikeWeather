@@ -1,0 +1,25 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    box-sizing: border-box;
+    gap: 180px;
+    margin-left: 45px;
+    margin-top: -70px;
+}
+
+.button {
+    display: flex;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+}
